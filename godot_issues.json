@@ -1,0 +1,162 @@
+[
+    {
+        "number": 117972,
+        "title": "[4.7.dev3] `Android Editor` Crash while Running the Project from the Project List",
+        "body": "### Tested versions\n\nNot Reproducible in `Godot 4.7.dev2`\n\n### System information\n\nGodot v4.7.dev3 - Android 11 (SDK 30 build eng.compil.20250711.100345) - Single-window, 1 monitor - OpenGL ES 3 (Compatibility) - Adreno (TM) 505 -  (8 threads)\n\n### Issue description\n\nThe Android Editor crashes when running the Game.\n\n### Steps to reproduce\n\nJust run any existing Project from the Project List\n\nAlso, Crashed when running from the editor\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "platform:android",
+            "topic:editor",
+            "regression"
+        ]
+    },
+    {
+        "number": 117955,
+        "title": "Input Event Configuration Dialog Crashes Engine when Joypad Actions are selected",
+        "body": "### Tested versions\n\n- Reproducible in 4.7.dev [2af7856]\nLikely from commit a71749c8848762adf7c04eac7edef213183fbc6c\n\n\n### System information\n\nGodot v4.7.dev.mono (2af785641) - Arch Linux #1 SMP PREEMPT_DYNAMIC Thu, 19 Mar 2026 16:33:17 +0000 on Wayland - X11 display driver, Multi-window, 1 monitor - Vulkan (Forward+) - dedicated NVIDIA GeForce RTX 3060 Ti (nvidia) - AMD Ryzen 9 5900X 12-Core Processor (24 threads) - 31.25 GiB memory\n\n### Issue description\n\nAdding input events to an action will cause the engine to crash. If the configuration dialogue already has an event set and you try to set a joypad event.\n\n### Steps to reproduce\n\nOpen project settings. \nGo To InputMap\nAdd an InputEvent to an action\nInitially bind a keyboard event\nThan bind a joypad event. (Or potentially any non keyboard event)\nWill cause engine to crash\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "topic:editor",
+            "confirmed",
+            "topic:input",
+            "crash",
+            "regression"
+        ]
+    },
+    {
+        "number": 117916,
+        "title": "System theme detection broken on Windows",
+        "body": "### Tested versions\n\nNot working in 4.7 dev 428cee4\nWorks correctly in 4.7 dev3\nso it's something very recent\n\n### System information\n\nWindows 10\n\n### Issue description\n\nThe editor settings `interface/theme/follow_system_theme` and `interface/theme/use_system_accent_color` don't work anymore.\nWhen enabling system theme, the editor switches to Light theme (I have dark theme).\nWhen enabling system accent color, the editor uses the default blue.\n\n### Steps to reproduce\n\nEnable aforementioned editor settings.\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "platform:windows",
+            "topic:platforms",
+            "regression"
+        ]
+    },
+    {
+        "number": 117905,
+        "title": "[4.7 dev3] Trying to assign a mouse button + modifier key in Input Map crashes the editor",
+        "body": "### Tested versions\n\n- Reproducible in 4.7 dev 3\n- Not reproducible in 4.7 dev 2\n\n### System information\n\nGodot v4.7.dev3 - ArchLinux SMP PREEMPT_DYNAMIC - Wayland display driver, Multi-window, 3 monitors - Vulkan (Forward+) - dedicated AMD Radeon RX 7900 XTX (RADV NAVI31) - AMD Ryzen 7 5800X 8-Core Processor (16 threads) - 31.24 GiB memory\n\n### Issue description\n\nWhen in any project's Input Map editor, trying to assign a mouse button plus a modifier key (Ctrl, Alt, Shift) while hovering the LineInput crashes the engine.\nThis can be scrolling up/down, left/right click, or other buttons like Mouse4 or Mouse5.\nThis happens regardless of whether the key is actually pressed, or if the modifier and/or the key is manually ticked in the options.\n\n### Steps to reproduce\n\nOpen any project\nGo to Project Settings -> Input map\nAdd a new action\nAdd Event\n\nPress any mouse button + a modifier key while hovering the LineInput\nor\nSelect any mouse button in the list of available keys, then tick a modifier key below the LineInput.\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "topic:editor",
+            "crash",
+            "regression"
+        ]
+    },
+    {
+        "number": 117900,
+        "title": "Invisible center view button in 2d viewport when using light themes",
+        "body": "### Tested versions\n\n- Reproducible in: Godot v4.6.1\n\n### System information\n\nGodot v4.6.1.stable - Windows 11 (build 26200) - Multi-window, 1 monitor - Direct3D 12 (Forward+) - dedicated NVIDIA GeForce RTX 2060 (NVIDIA; 32.0.15.9174) - AMD Ryzen 5 3600XT 6-Core Processor (12 threads) - 15.90 GiB memory\n\n### Issue description\n\nLow contrast on light theme makes it very hard to see that button\n\n| Light theme | Dark theme |\n| :-- | :-- |\n| <img width=\"589\" height=\"250\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/583da7b3-440b-42d9-b6ea-56a2084200a4\" /> | <img width=\"443\" height=\"182\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/0a90369f-7de0-4450-9600-298dd0f030b6\" /> |\n\n\n### Steps to reproduce\n\n- Set any of light theme\n- Go to 2D viewport\n\n### Minimal reproduction project (MRP)\n\n-",
+        "labels": [
+            "bug",
+            "topic:editor",
+            "usability"
+        ]
+    },
+    {
+        "number": 117877,
+        "title": "Editor compilation configuration editor does not disable any nodes and classes",
+        "body": "### Tested versions\n\nRegression in 4.7 dev 3\n\n### System information\n\nWindows\n\n### Issue description\n\nRunning the compilation configuration editor does not disable any nodes and classes. Probably regression from #117477 (did not confirm).\n\nActually, even the other categiories have regressed detection in dev 3.\n\n### Steps to reproduce\n\nRun the compilation configuration editor on any project in 4.7 dev 3.\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "topic:editor",
+            "regression"
+        ]
+    },
+    {
+        "number": 117848,
+        "title": "Enabling PointLight2D Shadow crashes Godot",
+        "body": "### Tested versions\n\nv4.7.dev2.official [778cf54da]\n\n### System information\n\nGodot v4.7.dev2 - macOS Tahoe (26.3.1) - Single-window, 2 monitors - Metal (Forward+) - integrated Apple M1 (Apple7) - Apple M1 (8 threads) - 8.00 GiB memory\n\n### Issue description\n\nEnabling shadows of a PointLight2D crashes Godot.\n\n### Steps to reproduce\n\nDownload the attached file. There is only one PointLight2D in an empty scene.\nClick on the \"PointLight2D / Light2D / Shadow\".\nGodot will crash.\n\nIt also crashes if it's left off and then enabled through code.\n\nIt does this every time.\n\nIf it's of any help, here is the log file that is generated by the crash:\n\u2026Actually I can't post it: \"Field can not be longer than 65536 characters\".\n\n### Minimal reproduction project (MRP)\n\n[light-makes-it-crash.zip](https://github.com/user-attachments/files/26256787/light-makes-it-crash.zip)",
+        "labels": [
+            "bug",
+            "topic:rendering",
+            "crash",
+            "topic:2d"
+        ]
+    },
+    {
+        "number": 117810,
+        "title": "Projects list has accessibility issues with screen readers after a number of projects are in it",
+        "body": "### Tested versions\n\n4.6.1\n\n### System information\n\nGodot v4.6.1.stable - Windows 10 (build 19044) - Multi-window, 1 monitor - Direct3D 12 (Forward+) - dedicated Intel(R) Iris(R) Xe Graphics (Intel Corporation; 27.20.100.9664) - 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz (8 threads) - 39.84 GiB memory\n\n### Issue description\n\nWhen the projects list gets more than about 5-6 projects, it becomes impossible to navigate among them easily. The scroll bar for some reason is focusable and gets in the way and doesn't let me easily navigate up and down the list. This issue probably occurs with many other long list boxes.\n\n### Steps to reproduce\n\n1. Open the project manager with 5-10 projects (mine has 9) while a screen reader is active.\n2. Try to navigate among all the projects. You will find that you can't go past the first or second, because focus will jump to the scroll bar.\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "topic:editor",
+            "usability"
+        ]
+    },
+    {
+        "number": 117797,
+        "title": "Cannot display dual-column docks on the right side",
+        "body": "### Tested versions\n\n- Reproducible in: 4.7.dev2\n- Not reproducible in: 4.7.dev1, 4.6.2-rc2, v4.6.2.rc.custom_build [04b5fcf18]\n\n### System information\n\nGodot v4.7.dev (792380565) - Windows 11 (build 26100) - Multi-window, 2 monitors - Direct3D 12 (Forward+) - dedicated NVIDIA GeForce GTX 1650 (NVIDIA; 32.0.15.9186) - AMD Ryzen 7 4800H with Radeon Graphics (16 threads) - 15.37 GiB memory\n\n### Issue description\n\nCannot display dual-column docks on the right side, and there are two unclickable buttons under Make Floating, as follow\n\n<img width=\"2570\" height=\"1441\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a18643e1-af0e-4cdc-869f-116565cabb5c\" />\n\n### Steps to reproduce\n\nOpen a new project, such as the official UI Accessibility sample project\n\n### Minimal reproduction project (MRP)\n\n[accessibility.zip](https://github.com/user-attachments/files/26220617/accessibility.zip)",
+        "labels": [
+            "bug",
+            "topic:editor"
+        ]
+    },
+    {
+        "number": 117793,
+        "title": "Enabling external editor removes 'Text Editor' preferences category on next load",
+        "body": "### Tested versions\n\n- Reproducible: 4.6.1 and 4.6.2-rc2\n \n\n### System information\n\nGodot v4.6.2.rc2 - Linux Mint 22.3 (Zena) on X11 - X11 display driver, Multi-window, 1 monitor - Vulkan (Forward+) - dedicated NVIDIA GeForce RTX 4080 Laptop GPU - 13th Gen Intel(R) Core(TM) i9-13900HX (32 threads) - 31.08 GiB memory\n\n### Issue description\n\nTurning on external editor support prevents disabling in the future. Manual editing of of the editor_settings tres file is required to restore the category. Once enabled, exited, and restarted, the entire Text Editor category is removed, preventing toggling of the option.\n\n\n### Steps to reproduce\n\nEnable external editor in the Text Editor category. I'm using emacsclient.\n\nExit.\n\nStart Godot again. Category is missing from preferences screen.\n\n\n### Minimal reproduction project (MRP)\n\nNew project. Enable external editor in preferences. Exit. Restart.\n\nI did not try from the launcher settings option.\n",
+        "labels": [
+            "bug",
+            "archived",
+            "topic:editor",
+            "usability"
+        ]
+    },
+    {
+        "number": 117791,
+        "title": "GDExtension crash on macOS 26 (Tahoe): NSBundle bundleWithURL throws for non-bundle paths",
+        "body": "## Godot version\n4.6.1-stable\n\n## System information\nmacOS 26.3.1 (Tahoe), Apple M4 Pro, ARM64\n\n## Issue description\nGodot crashes on startup when loading any GDExtension on macOS 26 (Tahoe). The crash occurs in `OS_MacOS::get_framework_executable()` (os_macos.mm line 371).\n\nThe function calls `[NSBundle bundleWithURL:url]` for every library path, including `.dylib` files and non-bundle directories. On macOS 26, Apple changed `NSBundle` to throw an `NSException` instead of returning `nil` for invalid bundle paths. This causes an unhandled Objective-C exception that terminates Godot.\n\n### Stack trace\n```\n0  CoreFoundation     __exceptionPreprocess\n1  libobjc.A.dylib    objc_exception_throw\n2  Foundation         -[NSBundle _initUniqueWithURL:]\n3  Foundation         +[NSBundle bundleWithURL:]\n4  Godot              OS_MacOS::open_dynamic_library + 280\n5  Godot              GDExtensionLibraryLoader::open_library\n6  Godot              GDExtension::open_library\n7  Godot              GDExtensionManager::load_extension\n```\n\n### Root cause\nIn `platform/macos/os_macos.mm`, `get_framework_executable()` unconditionally calls `[NSBundle bundleWithURL:]` at line 371 without checking if the path is actually a `.framework` bundle first.\n\n### Suggested fix\nWrap the `NSBundle` call in `@try/@catch`, or check if the path ends in `.framework` before calling `bundleWithURL:`:\n\n```objc\n// Option A: check path first\nif ([url.pathExtension isEqualToString:@\"framework\"]) {\n    NSBundle *bundle = [NSBundle bundleWithURL:url];\n    // ...\n}\n\n// Option B: wrap in @try/@catch\n@try {\n    NSBundle *bundle = [NSBundle bundleWithURL:url];\n    // ...\n} @catch (NSException *e) {\n    // Not a valid bundle, fall through to dylib loading\n}\n```\n\n## Steps to reproduce\n1. Build any GDExtension (framework or dylib) for macOS\n2. Install it in a Godot project\n3. Open the project in Godot 4.6.1 on macOS 26\n4. Godot crashes immediately\n\n## Minimal reproduction project\nAny GDExtension will trigger this on macOS 26. The issue is in Godot's library loading code, not in the extension itself.",
+        "labels": [
+            "bug",
+            "archived",
+            "platform:macos",
+            "topic:platforms",
+            "topic:gdextension"
+        ]
+    },
+    {
+        "number": 117789,
+        "title": "`Variant` pools leak reporting can crash depending on static destruction order",
+        "body": "### Tested versions\n\n- Reproducible in: 4.6.1.stable (custom fork)\n\n### System information\n\nGodot v4.6.1.stable (N/A) - macOS Tahoe (26.3.1) - Multi-window, 1 monitor - Metal (Forward+) - integrated Apple M2 Pro (Apple8) - Apple M2 Pro (10 threads) - 32.00 GiB memory\n\n### Issue description\n\nAs touched on in #106235 already, using `ERR_*` macros during shutdown is problematic due to static initialization/destruction order problems, that can seemingly start to appear somewhat randomly. One of those scenarios have manifested as a real crash for us, in our custom fork of 4.6.1-stable, as seen in this crash backrace:\n\n```\nstd::__1::mutex::lock()\nstd::__1::unique_lock<std::__1::mutex>::unique_lock[abi:nn200100](std::__1::mutex&)\nstd::__1::unique_lock<std::__1::mutex>::unique_lock[abi:nn200100](std::__1::mutex&)\nMutexLock<MutexImpl<std::__1::mutex>>::MutexLock(MutexImpl<std::__1::mutex> const&) (core/os/mutex.h:77)\nMutexLock<MutexImpl<std::__1::mutex>>::MutexLock(MutexImpl<std::__1::mutex> const&) (core/os/mutex.h:77)\nObject::assign_type_static(GDType**, char const*, GDType const*) (core/object/object.cpp:2436)\nObject::get_gdtype_static() (core/object/object.h:868)\nRefCounted::get_gdtype_static() (.cold.1) (core/object/ref_counted.h:37)\nObject::get_gdtype_static() (core/object/object.h:867)\nRefCounted::get_gdtype_static() (core/object/ref_counted.h:37)\nScriptBacktrace::get_gdtype_static() (core/object/script_backtrace.h:38)\nScriptBacktrace::get_class_static() (core/object/script_backtrace.h:38)\nString const GodotTypeInfo::Internal::get_object_class_name_or_empty<ScriptBacktrace>() (core/variant/type_info.h:304)\nTypedArray<ScriptBacktrace>::TypedArray() (core/variant/typed_array.h:56)\nTypedArray<ScriptBacktrace>::TypedArray() (core/variant/typed_array.h:55)\nCoreBind::OS::LoggerBind::log_error(char const*, char const*, int, char const*, char const*, bool, Logger::ErrorType, Vector<Ref<ScriptBacktrace>> const&) (core/core_bind.cpp:272)\nCompositeLogger::log_error(char const*, char const*, int, char const*, char const*, bool, Logger::ErrorType, Vector<Ref<ScriptBacktrace>> const&) (core/io/logger.cpp:261)\n_err_print_error(char const*, char const*, int, char const*, char const*, bool, ErrorHandlerType) (core/error/error_macros.cpp:117)\n_err_print_error(char const*, char const*, int, String const&, bool, ErrorHandlerType) (core/error/error_macros.cpp:102)\nPagedAllocator<Variant::Pools::BucketSmall, true, 4096u>::~PagedAllocator() (core/templates/paged_allocator.h:169)\n__cxa_finalize_ranges\nexit\n-[GodotApplicationDelegate applicationWillTerminate:] (platform/macos/godot_application_delegate.mm:314)\n__CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__\n___CFXRegistrationPost_block_invoke\n_CFXRegistrationPost\n_CFXNotificationPost\n-[NSNotificationCenter postNotificationName:object:userInfo:]\n-[NSApplication terminate:]\nOS_MacOS_NSApp::terminate() (platform/macos/os_macos.mm:1163)\ninvocation function for block in OS_MacOS_NSApp::start_main() (platform/macos/os_macos.mm:1129)\n__CFRUNLOOP_IS_CALLING_OUT_TO_AN_OBSERVER_CALLBACK_FUNCTION__\n__CFRunLoopDoObservers\n__CFRunLoopRun\n_CFRunLoopRunSpecificWithOptions\nRunCurrentEventLoopInMode\nReceiveNextEventCommon\n_BlockUntilNextEventMatchingListInMode\n_DPSBlockUntilNextEventMatchingListInMode\n_DPSNextEvent\n-[NSApplication(NSEventRouting) _nextEventMatchingEventMask:untilDate:inMode:dequeue:]\n-[NSApplication(NSEventRouting) nextEventMatchingMask:untilDate:inMode:dequeue:]\n-[NSApplication run]\nmain (platform/macos/godot_main_macos.mm:133)\nstart\n```\n\nMore specifically it's (in the `4.6` branch) this mutex that's already been destroyed by the time `PagedAllocator` tries to print its leak report:\n\nhttps://github.com/godotengine/godot/blob/5bd79ab53ffe9952f371a10e31c17947cf9a176b/core/object/object.cpp#L2406-L2408\n\nAs far as I can tell there has been some refactoring to the top part of this backtrace in latest `master`, but the `static BinaryMutex` involved is still there, as are the static `Variant` pools and the leak reporting, so this should still be just as much of a problem.\n\n### Steps to reproduce\n\nN/A\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "topic:core",
+            "crash"
+        ]
+    },
+    {
+        "number": 117759,
+        "title": "Different behavior between single select and multi select in the scene tree",
+        "body": "### Tested versions\n\nReproducible in: v4.5.2.stable.official [6ce3de25a], v4.6.1.stable.official [14d19694e]\n\n### System information\n\nGodot v4.6.1.stable - Windows 10 (build 19045) - Multi-window, 2 monitors - Direct3D 12 (Forward+) - dedicated NVIDIA GeForce RTX 3050 Ti Laptop GPU (NVIDIA; 32.0.15.8183) - AMD Ryzen 5 5600H with Radeon Graphics (12 threads) - 15.34 GiB memory\n\n### Issue description\n\nWhen selecting multiple instanced nodes and resetting a resource, the resource is getting removed instead of resetting to the default from the instanced scene.\n\nhttps://github.com/user-attachments/assets/0d6c1d06-1424-4e64-b741-eeac8671cd3e\n\nThis really makes an impact on usability when working with modular models. The temporary fix is to click on every node in the scene tree and reset the resource one node at a time.\n\n### Steps to reproduce\n\n1. Make a scene.\n2. Instantiate that scene multiple times in an another scene.\n3. Change some default resources on the instanced scene nodes.\n4. Try resetting that resource when multiple nodes are selected.\n\n### Minimal reproduction project (MRP)\n\n[node_multiselect_difference_2026-03-23_22-27-37.zip](https://github.com/user-attachments/files/26193498/node_multiselect_difference_2026-03-23_22-27-37.zip)",
+        "labels": [
+            "bug",
+            "topic:editor",
+            "usability"
+        ]
+    },
+    {
+        "number": 117756,
+        "title": "Pressing buttons in floating embedded game editor lets you type in the script editor",
+        "body": "### Tested versions\n\nv4.6.1.stable.official [14d19694e]\n\n### System information\n\nGodot v4.6.1.stable - Windows 11 (build 26200) - Multi-window, 1 monitor - OpenGL 3 (Compatibility)\n\n### Issue description\n\nPressing the buttons on top of floating embedded game let's you type in the script editor which usually results in typing inputs into the script and messing it up and having to undo it.\nDemonstration:\n\nhttps://github.com/user-attachments/assets/6c228fa4-f22b-49a9-882f-a22c5b3989e6\n\nThis happens because pressing the top buttons defocuses the game window (likely because the embedded window and the top buttons are from two separate windows), but I don't think it letting you interact with the current main screen (workspaces, script editor) is expected. Still I think it would be the most convenient if pressing any of the buttons simply immediatly refocused the window, or at least a warning was added when the game window is not in focus.\n\n### Steps to reproduce\n\n- Run project while the script editor is open.\n- Suspend and unsuspend running project in the floating embedded game editor, don't manually refocus the game window.\n- Start pressing any keys, it should start typing in the script editor.\n\n### Minimal reproduction project (MRP)\n\nN/A",
+        "labels": [
+            "bug",
+            "archived",
+            "topic:editor",
+            "usability"
+        ]
+    },
+    {
+        "number": 117751,
+        "title": "Godot ignores file permissions, overwrites read-only/protected files.",
+        "body": "### Tested versions\n\nTested on: v4.4.1.stable.official [49a5bc7b6], v4.5.stable.official [876b29033], v4.6.1.stable.official [14d19694e], \n\n### System information\n\nGodot v4.6.1.stable - Fedora Linux 43 (KDE Plasma Desktop Edition) on Wayland - X11 display driver, Multi-window, 3 monitors - OpenGL 3 (Compatibility) - Mesa Intel(R) Iris(R) Xe Graphics (TGL GT2) - 11th Gen Intel(R) Core(TM) i7-11370H @ 3.30GHz (8 threads) - 62.52 GiB memory\n\n### Issue description\n\nIf a file is inside the `res://` directory and its permissions do not allow for modifications (through the read-only flag or user permissions), Godot will ignore it totally and act as if the file is normally writeable.\n\nThis is a problem for versioning of binary files (.scn, .res, as well as any imported ones like .fbx or .png) using Perforce or Git with LFS locking. Making it difficult if not precarious to work in teams on a project.\n\nI'm not sure if the Godot Git plugin (https://github.com/godotengine/godot-git-plugin) addresses it. The last time I used it, it butchered my LFS setup. But regardless, it seems like the engine should respect read-only settings with no plugins.\n\nAdditional info:\n\n- v4.4.1.stable.official [49a5bc7b6] and v4.5.stable.official [876b29033] seem to change the permissions of the file.\n- v4.6.1.stable.official [14d19694e] seems to leave the file permissions as is, but still overwrites it.\n\n### Steps to reproduce\n\n1. Create any file in the godot res:// folder (for example a material).\n2. Change it to be read-only either through the file system or a VCS.\n3. Try to modify it in Godot.\n4. The file will be modified, regardless of its permissions.\n\n### Minimal reproduction project (MRP)\n\n[read-only.zip](https://github.com/user-attachments/files/26181293/read-only.zip)",
+        "labels": [
+            "bug",
+            "archived",
+            "topic:editor"
+        ]
+    }
+]
